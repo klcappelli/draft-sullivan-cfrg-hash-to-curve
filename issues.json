@@ -1,6 +1,58 @@
 [
 
   {
+    "url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/issues/20",
+    "repository_url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve",
+    "labels_url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/issues/20/labels{/name}",
+    "comments_url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/issues/20/comments",
+    "events_url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/issues/20/events",
+    "html_url": "https://github.com/chris-wood/draft-sullivan-cfrg-hash-to-curve/pull/20",
+    "id": 322277994,
+    "number": 20,
+    "title": "Hashing to pairing-friendly curves",
+    "user": {
+      "login": "Ela-BLee",
+      "id": 26417656,
+      "avatar_url": "https://avatars1.githubusercontent.com/u/26417656?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Ela-BLee",
+      "html_url": "https://github.com/Ela-BLee",
+      "followers_url": "https://api.github.com/users/Ela-BLee/followers",
+      "following_url": "https://api.github.com/users/Ela-BLee/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Ela-BLee/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Ela-BLee/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Ela-BLee/subscriptions",
+      "organizations_url": "https://api.github.com/users/Ela-BLee/orgs",
+      "repos_url": "https://api.github.com/users/Ela-BLee/repos",
+      "events_url": "https://api.github.com/users/Ela-BLee/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Ela-BLee/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2018-05-11T12:25:10Z",
+    "updated_at": "2018-05-11T12:25:10Z",
+    "closed_at": null,
+    "author_association": "FIRST_TIMER",
+    "pull_request": {
+      "url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/pulls/20",
+      "html_url": "https://github.com/chris-wood/draft-sullivan-cfrg-hash-to-curve/pull/20",
+      "diff_url": "https://github.com/chris-wood/draft-sullivan-cfrg-hash-to-curve/pull/20.diff",
+      "patch_url": "https://github.com/chris-wood/draft-sullivan-cfrg-hash-to-curve/pull/20.patch"
+    },
+    "body": "Added a section on hashing onto BN curves, which are pairing-friendly.\r\nIncludes a brief introduction to BN curves, the FT-encoding function, and steps for the overall hash function."
+  },
+  {
     "url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/issues/19",
     "repository_url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve",
     "labels_url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/issues/19/labels{/name}",
