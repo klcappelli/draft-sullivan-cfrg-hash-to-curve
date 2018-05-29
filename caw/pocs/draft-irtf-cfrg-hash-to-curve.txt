@@ -476,7 +476,8 @@ Internet-Draft                hash-to-curve                     May 2018
    at least one of them lies on the curve.
 
    The following procedure implements this algorithm.  It outputs a
-   point with affine coordinates.
+   point with affine coordinates.  It requires knowledge of A and B, the
+   constants from the curve Weierstrass form.
 
    map2curve_squ(alpha)
 
@@ -497,7 +498,6 @@ Internet-Draft                hash-to-curve                     May 2018
    3.   t2 = t^2
    4.   t4 = t2^2
    5.   gu = u^3
-   6.   gu = gu + (A * u)
 
 
 
@@ -506,6 +506,7 @@ Sullivan, et al.        Expires November 30, 2018               [Page 9]
 Internet-Draft                hash-to-curve                     May 2018
 
 
+   6.   gu = gu + (A * u)
    7.   gu = gu + B      // gu = g(u)
    8.   x1 = u           // x1 = X1(t, u) = u
    9.   x2 = B * -1
@@ -556,7 +557,6 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-
 Sullivan, et al.        Expires November 30, 2018              [Page 10]
 
 Internet-Draft                hash-to-curve                     May 2018
@@ -569,7 +569,8 @@ Internet-Draft                hash-to-curve                     May 2018
    5. Output (beta, sqrt(g(beta)))
 
    The following procedure implements this algorithm.  It outputs a
-   point with affine coordinates.
+   point with affine coordinates.  It requires knowledge of A and B, the
+   constants from the curve Weierstrass form.
 
    map2curve_simple_swu(alpha)
 
@@ -607,7 +608,6 @@ Internet-Draft                hash-to-curve                     May 2018
    22.    x = CMOV(x2, x3, e)    // If e = 1, choose x2, else choose x3
    23.    y = CMOV(y1, y2, e)    // If e = 1, choose y1, else choose y2
    24. Output (x, y)
-
 
 
 

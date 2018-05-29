@@ -718,7 +718,7 @@ Steps:
 t^3 * g(u)^2  * g(X2(t, u)) = g(X1(t, u)) * g(X2(t, u)) * g(X3(t, u))
 </pre>
 <p id="rfc.section.5.2.2.p.3">The algorithm computes three candidate points, constructed such that at least one of them lies on the curve.</p>
-<p id="rfc.section.5.2.2.p.4">The following procedure implements this algorithm. It outputs a point with affine coordinates.</p>
+<p id="rfc.section.5.2.2.p.4">The following procedure implements this algorithm. It outputs a point with affine coordinates. It requires knowledge of A and B, the constants from the curve Weierstrass form.</p>
 <pre>
 map2curve_squ(alpha)
 
@@ -791,7 +791,7 @@ Steps:
 4. If g(alpha) is square, output (alpha, sqrt(g(alpha)))
 5. Output (beta, sqrt(g(beta)))
 </pre>
-<p id="rfc.section.5.2.3.p.4">The following procedure implements this algorithm. It outputs a point with affine coordinates.</p>
+<p id="rfc.section.5.2.3.p.4">The following procedure implements this algorithm. It outputs a point with affine coordinates. It requires knowledge of A and B, the constants from the curve Weierstrass form.</p>
 <pre>
 map2curve_simple_swu(alpha)
 
