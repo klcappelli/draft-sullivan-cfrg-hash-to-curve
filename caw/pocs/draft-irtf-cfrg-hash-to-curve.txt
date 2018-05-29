@@ -5,10 +5,10 @@
 Network Working Group                                        N. Sullivan
 Internet-Draft                                                Cloudflare
 Intended status: Informational                                   C. Wood
-Expires: November 28, 2018                                    Apple Inc.
+Expires: November 30, 2018                                    Apple Inc.
                                                                 S. Scott
                                                             Cornell Tech
-                                                            May 27, 2018
+                                                            May 29, 2018
 
 
                        Hashing to Elliptic Curves
@@ -34,7 +34,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 28, 2018.
+   This Internet-Draft will expire on November 30, 2018.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Sullivan, et al.        Expires November 28, 2018               [Page 1]
+Sullivan, et al.        Expires November 30, 2018               [Page 1]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Sullivan, et al.        Expires November 28, 2018               [Page 2]
+Sullivan, et al.        Expires November 30, 2018               [Page 2]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -165,7 +165,7 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018               [Page 3]
+Sullivan, et al.        Expires November 30, 2018               [Page 3]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -221,7 +221,7 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018               [Page 4]
+Sullivan, et al.        Expires November 30, 2018               [Page 4]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -277,7 +277,7 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018               [Page 5]
+Sullivan, et al.        Expires November 30, 2018               [Page 5]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -333,7 +333,7 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018               [Page 6]
+Sullivan, et al.        Expires November 30, 2018               [Page 6]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -389,7 +389,7 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018               [Page 7]
+Sullivan, et al.        Expires November 30, 2018               [Page 7]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -445,7 +445,7 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018               [Page 8]
+Sullivan, et al.        Expires November 30, 2018               [Page 8]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -461,20 +461,19 @@ Internet-Draft                hash-to-curve                     May 2018
 
    1. t = H0(alpha)
    2. u = H1(alpha)
-   3. X1(t, u) = u
-   4. X2(t, u) = (-B / A)(1 + 1 / (t^4 * g(u)^2 + t^2 * g(u)))
-   5. X3(t, u) = t^3 * g(u)^2  * g(X2(t, u))
-   6. If g(X1(t, u)) is square, output (X1(t, u), sqrt(g(X1(t, u))))
-   7. If g(X2(t, u)) is square, output (X2(t, u), sqrt(g(X2(t, u))))
-   8. Output (X3(t, u), sqrt(g(X3(t, u))))
+   3. X1 = u
+   4. X2 = (-B / A)(1 + 1 / (t^4 * g(u)^2 + t^2 * g(u)))
+   5. X3 = t^3 * g(u)^2  * g(X2)
+   6. If g(X1) is square, output (X1, sqrt(g(X1)))
+   7. If g(X2) is square, output (X2, sqrt(g(X2)))
+   8. Output (X3(t, u), sqrt(g(X3)))
 
    The algorithm relies on the following equality:
 
    t^3 * g(u)^2  * g(X2(t, u)) = g(X1(t, u)) * g(X2(t, u)) * g(X3(t, u))
 
-   Thus, at least one of X1(t, u), X2(t, u), X3(t, u) is the
-   x-coordinate of a point on the curve.  Computing the corresponding y
-   value requires computing a square root.
+   The algorithm computes three candidate points, constructed such that
+   at least one of them lies on the curve.
 
    The following procedure implements this algorithm.  It outputs a
    point with affine coordinates.
@@ -498,15 +497,15 @@ Internet-Draft                hash-to-curve                     May 2018
    3.   t2 = t^2
    4.   t4 = t2^2
    5.   gu = u^3
+   6.   gu = gu + (A * u)
 
 
 
-Sullivan, et al.        Expires November 28, 2018               [Page 9]
+Sullivan, et al.        Expires November 30, 2018               [Page 9]
 
 Internet-Draft                hash-to-curve                     May 2018
 
 
-   6.   gu = gu + (A * u)
    7.   gu = gu + B      // gu = g(u)
    8.   x1 = u           // x1 = X1(t, u) = u
    9.   x2 = B * -1
@@ -557,7 +556,8 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 10]
+
+Sullivan, et al.        Expires November 30, 2018              [Page 10]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -613,7 +613,7 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 11]
+Sullivan, et al.        Expires November 30, 2018              [Page 11]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -669,7 +669,7 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 12]
+Sullivan, et al.        Expires November 30, 2018              [Page 12]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -725,7 +725,7 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 13]
+Sullivan, et al.        Expires November 30, 2018              [Page 13]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -781,7 +781,7 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 14]
+Sullivan, et al.        Expires November 30, 2018              [Page 14]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -837,7 +837,7 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 15]
+Sullivan, et al.        Expires November 30, 2018              [Page 15]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -893,7 +893,7 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 16]
+Sullivan, et al.        Expires November 30, 2018              [Page 16]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -949,7 +949,7 @@ A.2.  Naive Encoding
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 17]
+Sullivan, et al.        Expires November 30, 2018              [Page 17]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -1005,7 +1005,7 @@ A.5.  Twisted Variants
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 18]
+Sullivan, et al.        Expires November 30, 2018              [Page 18]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -1061,7 +1061,7 @@ E.set_order(q)
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 19]
+Sullivan, et al.        Expires November 30, 2018              [Page 19]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -1117,7 +1117,7 @@ C.2.  Shallue-Woestijne-Ulas Method
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 20]
+Sullivan, et al.        Expires November 30, 2018              [Page 20]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -1173,7 +1173,7 @@ def simple_swu_straight(alpha):
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 21]
+Sullivan, et al.        Expires November 30, 2018              [Page 21]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -1229,7 +1229,7 @@ C.4.  Elligator2 Method
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 22]
+Sullivan, et al.        Expires November 30, 2018              [Page 22]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -1285,7 +1285,7 @@ Authors' Addresses
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 23]
+Sullivan, et al.        Expires November 30, 2018              [Page 23]
 
 Internet-Draft                hash-to-curve                     May 2018
 
@@ -1341,4 +1341,4 @@ Internet-Draft                hash-to-curve                     May 2018
 
 
 
-Sullivan, et al.        Expires November 28, 2018              [Page 24]
+Sullivan, et al.        Expires November 30, 2018              [Page 24]
