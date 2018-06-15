@@ -1,6 +1,60 @@
 [
 
   {
+    "url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/issues/31",
+    "repository_url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve",
+    "labels_url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/issues/31/labels{/name}",
+    "comments_url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/issues/31/comments",
+    "events_url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/issues/31/events",
+    "html_url": "https://github.com/chris-wood/draft-sullivan-cfrg-hash-to-curve/pull/31",
+    "id": 331821160,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0MTk0NDU2OTgw",
+    "number": 31,
+    "title": "hacspec implementations",
+    "user": {
+      "login": "chris-wood",
+      "id": 2172048,
+      "node_id": "MDQ6VXNlcjIxNzIwNDg=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2172048?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chris-wood",
+      "html_url": "https://github.com/chris-wood",
+      "followers_url": "https://api.github.com/users/chris-wood/followers",
+      "following_url": "https://api.github.com/users/chris-wood/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chris-wood/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chris-wood/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chris-wood/subscriptions",
+      "organizations_url": "https://api.github.com/users/chris-wood/orgs",
+      "repos_url": "https://api.github.com/users/chris-wood/repos",
+      "events_url": "https://api.github.com/users/chris-wood/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chris-wood/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2018-06-13T02:43:15Z",
+    "updated_at": "2018-06-15T00:33:56Z",
+    "closed_at": null,
+    "author_association": "OWNER",
+    "pull_request": {
+      "url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/pulls/31",
+      "html_url": "https://github.com/chris-wood/draft-sullivan-cfrg-hash-to-curve/pull/31",
+      "diff_url": "https://github.com/chris-wood/draft-sullivan-cfrg-hash-to-curve/pull/31.diff",
+      "patch_url": "https://github.com/chris-wood/draft-sullivan-cfrg-hash-to-curve/pull/31.patch"
+    },
+    "body": "Elligator2 and SWU are incomplete since there is no square root function defined for each respective curve. I'll work with the hacspec folks to get that fixed."
+  },
+  {
     "url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/issues/30",
     "repository_url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve",
     "labels_url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/issues/30/labels{/name}",
@@ -577,9 +631,9 @@
 
     ],
     "milestone": null,
-    "comments": 2,
+    "comments": 3,
     "created_at": "2018-05-11T12:25:10Z",
-    "updated_at": "2018-05-25T20:13:52Z",
+    "updated_at": "2018-06-13T23:13:27Z",
     "closed_at": null,
     "author_association": "FIRST_TIMER",
     "pull_request": {
@@ -1599,7 +1653,10 @@
     "closed_at": "2018-06-01T00:30:29Z",
     "author_association": "OWNER",
     "body": "See the neat and tidy version in https://eprint.iacr.org/2009/340.pdf.\r\n"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/issues/1",
     "repository_url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve",
