@@ -34,17 +34,17 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
 
     ],
     "milestone": null,
-    "comments": 1,
+    "comments": 3,
     "created_at": "2018-06-13T02:43:15Z",
-    "updated_at": "2018-06-15T00:33:56Z",
-    "closed_at": null,
+    "updated_at": "2018-06-19T20:36:05Z",
+    "closed_at": "2018-06-19T20:36:04Z",
     "author_association": "OWNER",
     "pull_request": {
       "url": "https://api.github.com/repos/chris-wood/draft-sullivan-cfrg-hash-to-curve/pulls/31",
