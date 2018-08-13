@@ -362,6 +362,8 @@ The following table lists algorithms recommended by use-case:
 To find the suitable algorithm, lookup the requirement from above, with 
 the chosen curve in the below:
 
+THIS IS GREAT!
+
 | Curve  | Inj. Encoding | Random Oracle |
 |--------|---------------|------|
 | P-256 | Simple SWU {{simple-swu}} | FFSTV(SWU) 
